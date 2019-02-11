@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body{
+  background-color: #bbbbbb;
+}
+
+form {
+    border: 1px solid black;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+  background-color: #f0d9da;
+}
+body{
+  font-family:  Monospace
+}
+h1{
+  font-size: 50px;
+  color: #373331;
+}
+     
+</style>
+</head>
+<body>
+  <center>
+      <div class="head"></div>
+      <form name="form" onsubmit="return check()">
+         <hr noshade color= # size=7 width="100%">
+         <div class="matter">
+            <h1>Personal Info</h1>
+            <br><br>
+            <label>Name</label><br>
+            <input type="text" id="name" required><br>
+            <label>Fathers's name</label><br>
+            <input type="text" id="fname" required><br>
+            <label>University name</label><br>
+            <input type="text" id="uni" required><br>
+            <label>Branch</label><br>
+            <input type="radio" value="CSE" name="branch" id="branch">CSE<br>
+            <input type="radio" value="ME" name="branch" id="branch">ME<br>
+            <input type="radio" value="ECE" name="branch" id="branch">ECE<br>
+            <br>
+            <label>Roll No.</label><br/>
+            <input type="text" id="rollno" required><br/>
+            <label>Date of Birth</label><br/> 
+            <input type="date" id="dob" required><br/>
+            <label>Contact Number</label><br/>
+            <input type="text" id="phone" required><br/>
+            <label>E-mail id</label><br/>
+            <input type="email" id="mail" required><br/>
+            </span><br>
+            <input type="submit" value="Submit">
+         </div>
+      </form>
+         <script>
+         $(".toggle-password").click(function() {
+         $(this).toggleClass("fa-eye fa-eye-slash");
+         var input = $($(this).attr("toggle"));
+         if (input.attr("type") == "password") {
+         input.attr("type", "text");
+         } else {
+         input.attr("type", "password");
+         }
+         });
+       </script>
+       <script>
+       
+          function check()
+          {
+              var a=document.getElementById("name").value;
+              var b=document.getElementById("fname").value;
+              var c=document.getElementById("phone").value;
+              var d=document.getElementById("mail").value;
+              var ex=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+              if(a.length<=2)
+                alert('enter a valid name');
+                else if (b.length<=2) {
+                  alert("father's name incorrect");
+                }
+                else if (c.length<10 ||c.length>10) {
+                  alert('enter a valid contact number!');
+                }
+                else if (!ex.test(d)) {
+                  alert('enter valid email');
+                }
+                else {
+                    alert('form submitted successfully');
+                }
+         }
+      </script>
+    </center>
+
+   </body>
+   </html>
